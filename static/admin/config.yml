@@ -24,8 +24,6 @@ collections:
       depth: 100 # max depth to show in the collection tree
       summary: '{{title}}'
     fields:
-      # - name: 'menu'
-      #   label: 'Menu'
       - { label: 'Slug', name: 'id', widget: 'string' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Hide Title', name: 'hide_title', widget: 'boolean', default: false }
