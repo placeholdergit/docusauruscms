@@ -9,8 +9,8 @@ media_folder: 'assets/uploads'
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-  - name: docs
-    label: docs
+  - name: 'docs'
+    label: 'docs'
     label_singular: 'Doc'
     identifier_field: 'title'
     format: 'frontmatter'
