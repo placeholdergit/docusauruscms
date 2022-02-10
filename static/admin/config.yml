@@ -1,0 +1,64 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+# This line should *not* be indented
+publish_mode: editorial_workflow
+
+media_folder: 'assets/uploads'
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+  - name: 'docs'
+    label: 'Docs'
+    label_singular: 'Doc'
+    folder: 'docs'
+    path: "{{meta.path}}/{{slug}}"
+    create: true
+    slug: '{{id}}'
+    identifier_field: 'title'
+    extension: 'md'
+    meta: { path: { widget: string, label: 'Path', index_file: '{{slug}}' } }
+    format: 'frontmatter'
+    editor:
+      preview: false
+    nested:
+      depth: 100 # max depth to show in the collection tree
+      summary: '{{meta.path}}'
+    fields:
+      # - name: 'menu'
+      #   label: 'Menu'
+      - { label: 'Slug', name: 'id', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Hide Title', name: 'hide_title', widget: 'boolean', default: false }
+      - { label: 'Hide Table of Contents', name: 'hide_table_of_contents', widget: 'boolean', default: false }
+      - { label: 'Sidebar Label', name: 'sidebar_label', widget: 'string', required: false }
+      - { label: 'Image', name: 'image', widget: 'image', allow_multiple: false, required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown', default: 'some content' }
+
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'blog'
+    create: true
+    slug: '{{date}}-{{id}}'
+    identifier_field: 'title'
+    extension: 'md'
+    format: 'frontmatter'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Slug', name: 'id', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Author', name: 'author', required: false }
+      - { label: 'Author Title', name: 'author_title', widget: 'string', required: false }
+      - { label: 'Author URL', name: 'author_url', widget: 'string', required: false }
+      - { label: 'Author Image', name: 'author_image_url', widget: 'image', allow_multiple: false, required: false }
+      - { label: 'Hide Table of Contents', name: 'hide_table_of_contents', widget: 'boolean', default: false }
+      - { label: 'Tags', name: 'tags', widget: 'list', default: [], required: false }
+      - { label: 'Draft', name: 'draft', widget: 'boolean', default: true }
+      - { label: 'Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', timeFormat: false }
+      - { label: 'Description', name: 'description', required: false }
+      - { label: 'Image', name: 'image', widget: 'image', allow_multiple: false, required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
