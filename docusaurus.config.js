@@ -50,10 +50,10 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
+            to: "docs/",
+            activeBasePath: "docs",
+            label: "Docs",
+            position: "left",
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
