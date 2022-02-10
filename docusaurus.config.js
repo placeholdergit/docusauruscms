@@ -1,22 +1,22 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Anime Summit',
+  title: 'docusauruscms',
   tagline: 'Notes',
-  url: 'https://animesummit.net',
+  url: 'https://docusauruscms.net',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/chan.ico',
   organizationName: 'placeholdergit', // Usually your GitHub org/user name.
-  projectName: 'animesummit', // Usually your repo name.
+  projectName: 'docusauruscms', // Usually your repo name.
   // customFields: {
   //   trailingSlash: true
   // },
   themeConfig: {
     navbar: {
-      title: 'Anime Summit',
+      title: 'docusauruscms',
       logo: {
-        alt: 'Anime Summit Logo',
+        alt: 'docusauruscms Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -63,13 +63,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/placeholdergit/animesummit/edit/main/',
+            'https://github.com/placeholdergit/docusauruscms/edit/main/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/placeholdergit/animesummit/edit/main/',
+            'https://github.com/placeholdergit/docusauruscms/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
