@@ -10,21 +10,21 @@ public_folder: "/images/uploads" # The src attribute for uploaded media will beg
 
 collections:
   - name: docs
-    label: Docs
+    label: docs
     label_singular: 'Doc'
-    folder: 'docs'
-    path: '{{title}}/{{id}}'
-    slug: '{{id}}'
+    folder: docs
     create: true
-    nested: { depth: 100 } # accepts an optional summary template
+    # adding a nested object will show the collection folder structure
+    nested:
+      depth: 100 # max depth to show in the collection tree
+      summary: '{{title}}' # optional summary for a tree node, defaults to the inferred title field
     fields:
-      - { label: "Judul", name: "title", widget: "string" }
-      - {
-          label: "Posisi",
-          name: "sidebar_position",
-          widget: "string",
-          required: false,
-        }
-      - { label: "Keterangan", name: "body", widget: "markdown" }
-    allow_nesting: true
+      - label: Title
+        name: title
+        widget: string
+      - label: Body
+        name: body
+        widget: markdown
+    # adding a meta object with a path property allows editing the path of entries
+    # moving an existing entry will move the entire sub tree of the entry to the new location
     meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
