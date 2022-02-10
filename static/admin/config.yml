@@ -36,8 +36,6 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image', allow_multiple: false, required: false }
       - { label: 'Body', name: 'body', widget: 'markdown', default: 'some content' }
 
-    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
-
   - name: 'blog'
     label: 'Blog'
     folder: 'blog'
