@@ -12,7 +12,7 @@ collections:
   - name: docs
     label: docs
     label_singular: 'Doc'
-    folder: docs
+    folder: 'docs'
     create: true
     # adding a nested object will show the collection folder structure
     nested:
